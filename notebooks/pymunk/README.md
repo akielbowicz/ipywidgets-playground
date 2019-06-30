@@ -14,3 +14,5 @@ las posiciones con otro widget, por ejemplo un slider.
 
 Para remediar esto, se crearon varias funciones de callback que escuchen los cambios y modifiquen
 explícitamente los otros objetos.
+
+Para probar el notebook online [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/akielbowicz/ipywidgets-playground/master?filepath=notebooks%2Fpymunk%2Fpymunk_bqplot.ipynb)
