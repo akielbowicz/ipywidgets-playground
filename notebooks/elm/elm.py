@@ -66,3 +66,8 @@ def input(setup, text, placeholder):
     i = w.Text(value=text, placeholder=placeholder)
     setup(i)
     return i
+
+def password(setup, text, placeholder):
+    i = w.Password(value=text, placeholder=placeholder)
+    setup(i)
+    return i
