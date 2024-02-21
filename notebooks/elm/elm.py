@@ -39,7 +39,7 @@ def onClick(msg):
         widget.on_click(update_)
     return setup
 
-def onInput(msgC):
+def onInput(msgC, continuous_update=True):
     #https://package.elm-lang.org/packages/elm/html/latest/Html-Events#onInput
 
     def update_(w):
@@ -47,7 +47,7 @@ def onInput(msgC):
     
     def setup(widget):
         widget.observe(update_,"value")
-        # widget.continuous_update = False
+        widget.continuous_update = continuous_update
     return setup
 
 
