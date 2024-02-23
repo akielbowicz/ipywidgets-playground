@@ -44,11 +44,18 @@ def onInput(app, msgC, continuous_update=True):
         widget.continuous_update = continuous_update
     return setup
 
+def linkInput(model, model_attr, view_attr="value"):
+    #https://package.elm-lang.org/packages/elm/html/latest/Html-Events#onInput
+    def setup(widget):
+        w.link((widget, view_attr),(model, model_attr))
+    return setup
+
+
 def div(attrs, content):
     return w.VBox(content)
 
 def text(model, attributes="value", transform=str):
-    t = w.Text()
+    t = w.Text(disabled=True)
     def set(change):
         t.value = transform(change)
     model.observe(set,attributes)
@@ -59,12 +66,12 @@ def button(setup, text):
     setup(b)
     return b
 
-def input(setup, text, placeholder):
-    i = w.Text(value=text, placeholder=placeholder)
+def input(setup, placeholder):
+    i = w.Text(placeholder=placeholder)
     setup(i)
     return i
 
-def password(setup, text, placeholder):
-    i = w.Password(value=text, placeholder=placeholder)
+def password(setup, placeholder):
+    i = w.Password(placeholder=placeholder)
     setup(i)
     return i
