@@ -50,7 +50,6 @@ def linkInput(model, model_attr, view_attr="value"):
         w.link((widget, view_attr),(model, model_attr))
     return setup
 
-
 def div(attrs, content):
     return w.VBox(content)
 
